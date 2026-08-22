@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: cloudforge-demo
+
+spec:
+  rules:
+    - host: production.cloudforge.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cloudforge-demo
+                port:
+                  number: 80
