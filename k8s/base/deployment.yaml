@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: cloudforge-demo
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: cloudforge-demo
+
+  template:
+    metadata:
+      labels:
+        app: cloudforge-demo
+
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+
+      containers:
+        - name: cloudforge-demo
+          image: ghcr.io/aryans1319/cloudforge-demo-app:1.0
+          
+          ports:
+            - containerPort: 8080
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080  
+
+          livenessProbe:
+            httpGet:  
+              path: /health
+              port: 8080    
+
+          envFrom:
+            - configMapRef:
+                name: cloudforge-config   
+            - secretRef:
+                name: cloudforge-secret       
