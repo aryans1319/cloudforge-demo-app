@@ -22,7 +22,7 @@ spec:
 
       containers:
         - name: cloudforge-demo
-          image: ghcr.io/aryans1319/cloudforge-demo-app:1.0
+          image: ghcr.io/aryans1319/cloudforge-demo-app
           
           ports:
             - containerPort: 8080

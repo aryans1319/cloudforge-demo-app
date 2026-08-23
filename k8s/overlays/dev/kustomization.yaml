@@ -12,3 +12,7 @@ replicas:
 
 patches:
   - path: ingress-patch.yaml
+
+images:
+  - name: ghcr.io/aryans1319/cloudforge-demo-app
+    newTag: "1.0"
