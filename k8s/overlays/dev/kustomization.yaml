@@ -15,4 +15,4 @@ patches:
 
 images:
   - name: ghcr.io/aryans1319/cloudforge-demo-app
-    newTag: "c481dcb758a08490e10646dc92561360c60370da"
+    newTag: "886aab5634d5f1930fb0807abd98a539fcfe3637"
