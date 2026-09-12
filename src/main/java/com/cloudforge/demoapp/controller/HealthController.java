@@ -13,6 +13,6 @@ public class HealthController {
 
     @GetMapping("/api/hello")
     public String hello() {
-        return "Hello from CloudForge Demo App";
+        return "Hello from CloudForge Demo App to test";
     }
 }
